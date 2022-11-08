@@ -1,8 +1,8 @@
 # Tugas 7: Elemen Dasar Flutter
 
-Nama: Amira Nisrina Nashita
-NPM: 2106703815
-Kelas: F
+Nama: Amira Nisrina Nashita | 
+NPM: 2106703815 | 
+Kelas: F | 
 
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget dan jelaskan perbedaan dari keduanya.
 
