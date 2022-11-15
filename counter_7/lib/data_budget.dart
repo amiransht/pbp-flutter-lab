@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'tambah_budget.dart';
+import 'drawer.dart';
 
 class DataBudgetPage extends StatelessWidget {
   const DataBudgetPage({super.key});
@@ -15,45 +16,7 @@ class DataBudgetPage extends StatelessWidget {
         appBar: AppBar(
           title: const Text(title),
         ),
-         drawer: Drawer(
-          child: Column(
-            children: [
-              // Menambahkan clickable menu
-              ListTile(
-                title: const Text('Counter'),
-                onTap: () {
-                  // Route menu ke halaman utama
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MyHomePage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Tambah Budget'),
-                onTap: () {
-                  // Route menu ke halaman form
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TambahBudgetPage()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Data Budget'),
-                onTap: () {
-                  // Route menu ke halaman form
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DataBudgetPage()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+         drawer: buildDrawer(context),
         body: SingleChildScrollView(
          child: Align(
           alignment: Alignment.topCenter,
@@ -66,6 +29,18 @@ class DataBudgetPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Row(
+                        children: [
+                          Text(
+                            o.date.toString().substring(0,16),
+                            style: const TextStyle(fontSize: 14.0),
+                          ),
+                        ],
+                      ),
+                      Divider(
+                        color: Color.fromARGB(255, 106, 106, 106)
+                      ),
+                      const SizedBox(height: 6.0),
                       Row(
                         children: [
                           Text(
@@ -82,10 +57,18 @@ class DataBudgetPage extends StatelessWidget {
                             'Rp ' + o.nominal.toString(),
                             style: const TextStyle(fontSize: 16.0),
                           ),
-                          Text(
-                            o.jenis.toString(),
-                            style: const TextStyle(fontSize: 16.0),
-                          ),
+                          if (o.jenis.toString() == 'Pengeluaran')...[
+                            Text(
+                              o.jenis.toString(),
+                              style: const TextStyle(fontSize: 16.0, color: Colors.redAccent),
+                            ),
+                          ] else ...[
+                            Text(
+                              o.jenis.toString(),
+                              style: const TextStyle(fontSize: 16.0, color: Colors.blueAccent),
+                            ),
+                          ]
+                          
                         ],
                       )
                     ],

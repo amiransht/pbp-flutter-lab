@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'tambah_budget.dart';
 import 'data_budget.dart';
+import 'drawer.dart';
 
 
 void main() {
@@ -68,44 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
       title: Text(widget.title),
     ),
     // Menambahkan drawer menu
-    drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MyHomePage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Tambah Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const TambahBudgetPage()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text('Data Budget'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const DataBudgetPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
+    drawer: buildDrawer(context),
+
     body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
