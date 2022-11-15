@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'form.dart';
+import 'tambah_budget.dart';
+import 'data_budget.dart';
 
 
 void main() {
@@ -82,12 +83,23 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('Form'),
+              title: const Text('Tambah Budget'),
               onTap: () {
                 // Route menu ke halaman form
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyFormPage()),
+                  MaterialPageRoute(builder: (context) => const TambahBudgetPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('Data Budget'),
+              onTap: () {
+                // Route menu ke halaman form
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const DataBudgetPage()),
                 );
               },
             ),
