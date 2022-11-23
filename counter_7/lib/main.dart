@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'tambah_budget.dart';
-import 'data_budget.dart';
+import 'page/tambah_budget.dart';
+import 'page/data_budget.dart';
 import 'drawer.dart';
 
 

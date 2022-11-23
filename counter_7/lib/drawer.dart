@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'tambah_budget.dart';
-import 'data_budget.dart';
+import 'page/tambah_budget.dart';
+import 'page/data_budget.dart';
+import 'page/mywatchlist_page.dart';
 
 Drawer buildDrawer(BuildContext context) {
   String? route = ModalRoute.of(context)?.settings.name;
@@ -38,6 +39,17 @@ Drawer buildDrawer(BuildContext context) {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const DataBudgetPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                // Route menu ke halaman form
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyWatchListPage()),
                 );
               },
             ),

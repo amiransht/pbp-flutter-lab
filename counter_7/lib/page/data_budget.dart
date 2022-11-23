@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import '../main.dart';
 import 'tambah_budget.dart';
-import 'drawer.dart';
+import '../drawer.dart';
 
 class DataBudgetPage extends StatelessWidget {
   const DataBudgetPage({super.key});
