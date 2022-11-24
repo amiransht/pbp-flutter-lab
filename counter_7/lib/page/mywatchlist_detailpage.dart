@@ -20,7 +20,7 @@ class _MyWatchListDetailState extends State<MyWatchListDetail> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Wacth Item Detail'),
+          title: const Text('Wacth List Detail'),
           elevation: 0,
         ),
         drawer: buildDrawer(context),
@@ -84,8 +84,8 @@ class _MyWatchListDetailState extends State<MyWatchListDetail> {
                             ),
                             Text(
                               widget.watchList.fields.watched
-                                  ? 'wacthed'
-                                  : 'not wacthed',
+                                  ? 'watch'
+                                  : 'not watch',
                             )
                           ],
                         ),

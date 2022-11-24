@@ -42,6 +42,7 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
 
     super.initState();
     _remoteDataSource = WatchListRemoteDataSource();
+    print(_remoteDataSource);
     _futureWatchList = _remoteDataSource.fetchWatchList();
   }
 
